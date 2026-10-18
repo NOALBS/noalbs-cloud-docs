@@ -76,7 +76,6 @@ addresses. If your stream servers are on the same network as NOALBS, set
 
 ## Running it for other people
 
-- **Give it another name and logo.** The names NOALBS and NOALBS Cloud and the logo are ours.
 - **Replace the privacy policy and terms** (`web/dashboard/privacy.html`, `terms.html`): they
   describe our service and name us as its operator. Change `support@noalbs.com` in the dashboard
   too.
