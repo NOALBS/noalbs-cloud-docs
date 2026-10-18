@@ -51,7 +51,10 @@ export default defineConfig({
           label: "Self-hosting",
           items: ["self-hosting/overview", "self-hosting/sign-in-and-chat", "self-hosting/operating"],
         },
-        "contributing",
+        {
+          label: "Contributing",
+          items: ["contributing", "contributing/architecture"],
+        },
       ],
     }),
   ],

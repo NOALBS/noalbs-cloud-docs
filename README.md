@@ -28,6 +28,7 @@ The docs describe what the code does, so most pages follow a part of the
 | BELABOX, Moblin | `web/dashboard/src/components/{belabox,moblin}-settings.tsx`, `components/live/` |
 | Add to NOALBS Cloud links | `web/dashboard/src/lib/add-server.ts` |
 | Self-hosting | `deploy/README.md` (which stays the full reference; link to it rather than copy settings) |
+| Architecture | the services, `crates/live` (NATS subjects and stores), `services/obs-link/src/app.rs` (how the browser source connects) |
 
 Use the dashboard's own words for buttons and settings, in **bold**.
 

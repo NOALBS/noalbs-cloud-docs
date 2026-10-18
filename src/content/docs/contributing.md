@@ -13,7 +13,9 @@ backend and a React dashboard. Its
 [README](https://github.com/NOALBS/noalbs-cloud#readme) gets it running on your machine, with
 fakes for Twitch, Kick, YouTube, BELABOX Cloud and Moblin so you don't need accounts or devices,
 and [CONTRIBUTING.md](https://github.com/NOALBS/noalbs-cloud/blob/main/CONTRIBUTING.md) has the
-checks and rules for pull requests.
+checks, the rules for pull requests and the details of local development.
+
+[Architecture](/contributing/architecture/) explains how the services fit together.
 
 For anything bigger than a fix, open an issue or ask on
 [Discord](https://discord.gg/efWu5HWM2u) first.
