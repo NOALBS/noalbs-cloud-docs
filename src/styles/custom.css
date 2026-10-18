@@ -1,0 +1,12 @@
+/* NOALBS blue (the logo's #5576DA), as Starlight's accent. */
+:root {
+  --sl-color-accent-low: #161d38;
+  --sl-color-accent: #5576da;
+  --sl-color-accent-high: #c9d4f6;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #d6def8;
+  --sl-color-accent: #3d5ec4;
+  --sl-color-accent-high: #1c2a5c;
+}

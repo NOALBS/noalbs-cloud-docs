@@ -1,0 +1,43 @@
+---
+title: NOALBS Cloud
+description: Automatic OBS scene switching for IRL streams, without running anything on your PC.
+template: splash
+hero:
+  tagline: Automatic scene switching for IRL streams.
+  image:
+    file: ../../assets/logo.svg
+  actions:
+    - text: Quick start
+      link: /getting-started/quick-start/
+      icon: right-arrow
+    - text: How it works
+      link: /getting-started/introduction/
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+<CardGrid stagger>
+  <Card title="Switching" icon="random">
+    NOALBS reads your stream server's bitrate and latency every second and switches OBS
+    between your LIVE, LOW and BRB scenes. [How it decides](/guides/switching/)
+  </Card>
+  <Card title="Stream servers" icon="seti:db">
+    BELABOX Cloud, MediaMTX, SRT Live Server, NGINX, Nimble, OpenIRL, IRLHosting and more,
+    with backups. [Set one up](/guides/stream-servers/)
+  </Card>
+  <Card title="Chat commands" icon="comment">
+    `!bitrate`, `!switch`, `!start`, `!fix` and the rest, on Twitch, Kick and YouTube.
+    [All commands](/reference/chat-commands/)
+  </Card>
+  <Card title="BELABOX and Moblin" icon="phone">
+    See modems and battery, change bitrate and start or stop the encoder from the
+    dashboard or chat. [BELABOX](/guides/belabox/) · [Moblin](/guides/moblin/)
+  </Card>
+</CardGrid>
+
+<LinkCard
+  title="Run it yourself"
+  description="NOALBS Cloud is open source (AGPL-3.0). Host your own copy with Docker Compose."
+  href="/self-hosting/overview/"
+/>
