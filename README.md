@@ -31,6 +31,10 @@ The docs describe what the code does, so most pages follow a part of the
 
 Use the dashboard's own words for buttons and settings, in **bold**.
 
+The dashboard screenshots in `src/assets/screenshots/` are made by a script that runs a
+throwaway NOALBS Cloud with made-up data: retake them when a page's look changes. See
+[`scripts/screenshots/README.md`](scripts/screenshots/README.md).
+
 ## License
 
 The docs are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), the code
