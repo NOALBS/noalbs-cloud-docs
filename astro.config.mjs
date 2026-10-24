@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [
     starlight({
       plugins: [starlightImageZoom()],
+      routeMiddleware: "./src/routeData.ts",
       title: "NOALBS Cloud",
       description:
         "Documentation for NOALBS Cloud, the hosted automatic OBS scene switcher for IRL streams.",
