@@ -1,12 +1,14 @@
 // @ts-check
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
+import starlightImageZoom from "starlight-image-zoom";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://docs.noalbs.com",
   integrations: [
     starlight({
+      plugins: [starlightImageZoom()],
       title: "NOALBS Cloud",
       description:
         "Documentation for NOALBS Cloud, the hosted automatic OBS scene switcher for IRL streams.",
