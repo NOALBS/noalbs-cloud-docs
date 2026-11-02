@@ -74,6 +74,7 @@ and waits for a real number.
 | **Then switch to LIVE** | off | Leave the Starting scene as soon as your feed arrives. |
 | **Record while streaming** | off | Start and stop recording together with the stream. |
 | **Stop stream after a raid** | off | End the stream once you raid out (Twitch and Kick). Needs the chat bot. |
+| **Switch to BRB after a raid** | off | Show the BRB scene as the stream stops for a raid: the stream server's own BRB scene if it has one, else the switcher's. Needs **Stop stream after a raid**. |
 | **Announce raids** | off | Say in chat when the stream stops for a raid, with a link to the raided channel. |
 
 ### Stopping automatically
