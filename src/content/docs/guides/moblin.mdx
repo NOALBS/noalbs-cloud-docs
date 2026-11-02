@@ -5,6 +5,7 @@ description: Remote control a phone running Moblin from the dashboard and chat.
 
 import { Image } from "astro:assets";
 import card from "../../../assets/screenshots/moblin-card.webp";
+import settings from "../../../assets/screenshots/moblin-settings.webp";
 
 [Moblin](https://moblin.app/) has a remote control: an "assistant" can watch and control the
 phone while it streams. NOALBS Cloud can be that assistant, so you see its bitrate, bonding and
@@ -28,15 +29,26 @@ enter it there.
 
 ## On the Live page
 
-<Image src={card} alt="The Moblin card: live at 6.4 Mbps, battery, heat, the phone's CPU, a DJI camera, bonding over cellular and WiFi, a Moblink relay, and the controls." width={352} />
+<Image src={card} alt="The Moblin card: streaming at 6,149 kbps, battery, heat, the phone's CPU, a DJI camera, what cellular, WiFi and a Moblink relay each send with a graph and their RTT, and the controls." width={352} />
 
-The **Moblin** card shows whether it's live, its bitrate and uptime, battery, heat, the phone's
-CPU and memory, a connected DJI camera, each bonding connection's share and RTT, and Moblink
-relays with their battery.
+The **Moblin** card shows whether it's streaming, the kbps it sends and its uptime, battery, heat,
+the phone's CPU and memory, a connected DJI camera, what each bonding connection sends (with a
+graph since you opened the page, up to two minutes) and its RTT, and Moblink relays with their
+battery. Older Moblin versions only report each connection's share, shown as bars.
 
 People who can control the switcher also get: **Go live** / Stop, **Record**, **Mute**,
-**Light** (torch), **Stealth** mode, the **scene** and **bitrate preset**, **zoom** (−/+ and
-presets), and per bonding connection on/off and priority (with connection priorities turned on).
+**Light** (torch), **Stealth** mode, the **scene** and **bitrate preset**, and **zoom** (−/+ and
+presets).
+
+### Connection priorities
+
+<Image src={settings} alt="Moblin settings: connection priorities off, with Cellular, WiFi and a Moblink relay, each at priority 1 and turned on." width={512} />
+
+The settings button on the card opens **Moblin settings**, with Moblin's connection priorities.
+Off, Moblin uses every bonding connection alike. Turned on, people who can control the switcher
+can turn connections off or give them a priority from 1 to 10: a stable connection with a higher
+priority is used more. The last connection in use can't be turned off. Only SRTLA streams use
+these.
 
 ## Start and stop with OBS
 

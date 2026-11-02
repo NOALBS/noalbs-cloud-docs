@@ -19,7 +19,14 @@ export const SHOTS = {
     click: (page) => page.getByRole("button", { name: /BELABOX settings/i }).first().click(),
     wait: 4000,
   },
-  "moblin-card": { path: "/live", element: '[aria-label="Moblin"]', viewport: { width: 1440, height: 2400 }, wait: 4000 },
+  // Like BELABOX's, the bonding sparklines only hold what arrived since the page opened.
+  "moblin-card": { path: "/live", element: '[aria-label="Moblin"]', viewport: { width: 1440, height: 2400 }, wait: 45_000 },
+  "moblin-settings": {
+    path: "/live",
+    element: '[role="dialog"]',
+    click: (page) => page.getByRole("button", { name: /Moblin settings/i }).first().click(),
+    wait: 4000,
+  },
   setup: { path: "/setup", viewport: { width: 1440, height: 1240 } },
   switching: { path: "/triggers", full: true },
   scenes: { path: "/scenes" },

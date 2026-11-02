@@ -72,6 +72,7 @@ export async function seed({ base, sql, obsPort, statsPort }) {
     retry_attempts: 5,
     auto_stop_on_raid: true,
     announce_raid: true,
+    switch_to_offline_on_raid: false,
     record_while_streaming: false,
     recording_scene_ids: [],
     switch_to_starting: true,
