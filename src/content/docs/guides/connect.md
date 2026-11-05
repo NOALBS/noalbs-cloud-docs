@@ -95,6 +95,7 @@ Connect can show these OBS states:
 | --- | --- |
 | **OBS connected** | Connect can reach OBS over its WebSocket connection. |
 | **Starting OBS…** | OBS is starting. |
+| **OBS is running** | OBS is running on a setup that is not paired yet. |
 | **OBS is waiting for input** | OBS is running but has not connected to Connect yet. |
 | **OBS is asking about Safe Mode** | OBS is showing its Safe Mode prompt. |
 | **OBS websocket is off** | OBS WebSocket is disabled. Select **Turn on OBS websocket** in Connect to enable it. |
@@ -139,11 +140,13 @@ can allow admins or everyone in the workspace; NOALBS support is excluded. Peopl
 permission do not see the program list, paths or arguments in the dashboard.
 
 You can add programs in Connect or from the dashboard. Give each program a full executable path
-and its arguments, one per line. In the dashboard, the fields are **Full program path** and
-**Arguments (one per line)**. Choose **Start with OBS** or **Stop with OBS** if the program should
-follow OBS's start or stop, whether OBS is started or closed from Connect, the tray, the dashboard,
-or directly on your computer. If the watchdog restarts OBS after a crash, programs set to follow
-OBS keep running. To let dashboard users add or edit programs, enable
+and its arguments, one per line. On macOS, you can choose the app itself (for example
+`/Applications/TextEdit.app`); Connect opens it the way Finder does. In the dashboard, the fields
+are **Full program path** and **Arguments (one per line)**. Choose **Start with OBS** or
+**Stop with OBS** if the program should follow OBS's start or stop, whether OBS is started or closed
+from Connect, the tray, the dashboard, or directly on your computer. If the watchdog restarts OBS
+after a crash, programs set to follow OBS keep running. To let dashboard users add or edit programs,
+enable
 **Allow the dashboard to add and edit programs** in Connect on that computer.
 
 **Stop** asks a program to close, then force-closes it after 5 seconds if it is still running. OBS
