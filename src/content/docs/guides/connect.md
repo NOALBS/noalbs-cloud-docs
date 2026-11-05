@@ -44,6 +44,24 @@ connects to the same switcher, it takes over and Connect shows that it was disco
 On first run, **Start NOALBS Cloud Connect when my computer starts** is enabled by default. You can
 change it in the app's settings.
 
+## Updates
+
+Connect checks for updates 30 seconds after it starts, then every 6 hours. It never installs an
+update by itself. When an update is available, the **Updates** row in the Connect window shows it
+with an **Install and restart** button. You can also select **Check for updates** at any time.
+
+OBS and your programs keep running while Connect updates and restarts. Updates are signed, and
+Connect only installs updates signed by NOALBS.
+
+How the update is installed depends on your platform:
+
+- On Windows, a small progress window shows the update; you don't have to answer any questions.
+- On Linux, each format updates in its own way: an AppImage replaces the file, while `.deb` and
+  `.rpm` packages ask for your password to install.
+- On macOS, the app is replaced.
+
+Only copies installed from the first public release onwards can update automatically.
+
 ## Pair a computer
 
 1. In Connect, add a setup and give it a name. Select **Pair with NOALBS Cloud**.
@@ -123,11 +141,14 @@ permission do not see the program list, paths or arguments in the dashboard.
 You can add programs in Connect or from the dashboard. Give each program a full executable path
 and its arguments, one per line. In the dashboard, the fields are **Full program path** and
 **Arguments (one per line)**. Choose **Start with OBS** or **Stop with OBS** if the program should
-follow OBS's start or stop. To let dashboard users add or edit programs, enable
+follow OBS's start or stop, whether OBS is started or closed from Connect, the tray, the dashboard,
+or directly on your computer. If the watchdog restarts OBS after a crash, programs set to follow
+OBS keep running. To let dashboard users add or edit programs, enable
 **Allow the dashboard to add and edit programs** in Connect on that computer.
 
-**Stop** ends every running process that uses the program's executable. You cannot change the
-executable path while that program is running.
+**Stop** asks a program to close, then force-closes it after 5 seconds if it is still running. OBS
+gets 20 seconds to close. **Stop** ends every running process that uses the program's executable.
+You cannot change the executable path while that program is running.
 
 :::caution
 OBS control and program permissions let the people you allow run software on your computer. Keep
