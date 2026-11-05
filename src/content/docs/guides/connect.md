@@ -38,8 +38,14 @@ connects to the same switcher, it takes over and Connect shows that it was disco
    - On Linux, make the AppImage executable before opening it:
      `chmod +x NOALBS-Cloud-Connect-linux-x86_64.AppImage`. You can also install the `.deb` or
      `.rpm` package.
-4. To verify a download, keep `SHA256SUMS` beside the downloaded file and run
-   `sha256sum -c SHA256SUMS`.
+4. To verify a download, put `SHA256SUMS` from the same release next to the file you downloaded,
+   then run:
+   - Linux: `sha256sum --ignore-missing -c SHA256SUMS`
+   - macOS: `shasum -a 256 --ignore-missing -c SHA256SUMS`
+   - Windows (PowerShell): `Get-FileHash .\NOALBS-Cloud-Connect-windows-x64-setup.exe`, then
+     compare the hash with that file's line in `SHA256SUMS`.
+
+   On Linux and macOS it prints `OK` for your file.
 
 On first run, **Start NOALBS Cloud Connect when my computer starts** is enabled by default. You can
 change it in the app's settings.
