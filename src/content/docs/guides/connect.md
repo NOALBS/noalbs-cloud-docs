@@ -10,8 +10,10 @@ your computer to a switcher in NOALBS Cloud so you can see OBS's status and cont
 app or dashboard. It can also restart OBS after a crash, upload OBS logs and crash reports, start
 other programs such as Streamer.bot, and manage several OBS setups on one computer.
 
-Connect works **alongside the browser source**. The browser source remains supported and is still
-needed for NOALBS Cloud's automatic scene switching; Connect adds OBS control and status.
+Connect is an alternative to the [browser source](/getting-started/quick-start/), which stays
+supported. It connects OBS to the switcher the same way, so switching works through it too, and adds
+the features above. Use one or the other for a switcher: if a browser source or another computer
+connects to the same switcher, it takes over and Connect shows that it was disconnected.
 
 ## Download and install
 
