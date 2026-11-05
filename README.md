@@ -26,6 +26,7 @@ The docs describe what the code does, so most pages follow a part of the
 | Stream servers, Stream server kinds | `web/dashboard/src/lib/stream-server-kinds.ts`, `services/obs-link/src/stream_servers/` |
 | Chat commands, Chat bot | `noalbs_chat_commands` in the migrations (names, default roles), `services/chat/src/commands/` |
 | BELABOX, Moblin | `web/dashboard/src/components/{belabox,moblin}-settings.tsx`, `components/live/` |
+| Connect | `connect/` (core, `app/ui/src/main.tsx`), `web/dashboard/src/components/connect-settings.tsx`, `web/dashboard/src/lib/connect-download.ts`, `.github/workflows/connect-release.yml` |
 | Add to NOALBS Cloud links | `web/dashboard/src/lib/add-server.ts` |
 | Self-hosting | `deploy/README.md` (which stays the full reference; link to it rather than copy settings) |
 | Architecture | the services, `crates/live` (NATS subjects and stores), `services/obs-link/src/app.rs` (how the browser source connects) |
