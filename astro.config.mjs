@@ -35,6 +35,7 @@ export default defineConfig({
             "guides/scenes",
             "guides/switching",
             "guides/dashboard",
+            "guides/connect",
             "guides/chat-bot",
             "guides/belabox",
             "guides/moblin",
