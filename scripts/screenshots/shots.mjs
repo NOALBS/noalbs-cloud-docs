@@ -30,6 +30,12 @@ export const SHOTS = {
   setup: { path: "/setup", viewport: { width: 1440, height: 1240 } },
   switching: { path: "/triggers", full: true },
   scenes: { path: "/scenes" },
+  "scene-combination": {
+    path: "/scenes",
+    element: '[role="dialog"]',
+    click: (page) => page.getByRole("button", { name: /^Edit BELABOX Cloud \+ Backup SRT/ }).click(),
+    wait: 2000,
+  },
   servers: { path: "/servers" },
   history: { path: "/history" },
   // The second stream in the list: the long one with the dips, the backup taking over and a BRB.

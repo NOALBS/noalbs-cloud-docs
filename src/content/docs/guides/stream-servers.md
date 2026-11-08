@@ -54,6 +54,10 @@ that server is the one in use. For example: a different overlay that says "backu
 
 When there's no feed at all, the BRB scene of the server that was last in use is shown.
 
+For other scenes while several servers are live at once, say a two-camera layout, see
+[server combinations](/guides/scenes/#server-combinations). Removing a server also removes the
+combinations it's in.
+
 ## How many
 
 Your plan sets how many stream servers a switcher can have. After a downgrade, servers over the
