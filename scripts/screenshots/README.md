@@ -20,18 +20,20 @@ It needs:
 - Docker (it starts its own Postgres 18 and NATS),
 - Chrome or Chromium (`CHROME` overrides the path),
 - `pnpm install` here (Playwright and `ws`),
-- these ports free: 4455 (close OBS), 5190, 11100, 12100, 14222, 15432, 18200, 18300.
+- these ports free: 4455 (close OBS, or set `OBS_PORT` to another port; the `setup` shot then
+  shows that port, so leave it out), 5190, 11100, 12100, 14222, 15432, 18200, 18300.
 
 ## What it does
 
 1. Builds `api`, `obs-link`, `db-migrator` and the `fake_belabox` / `fake_moblin` examples, then
    starts a throwaway stack on its own ports: Postgres and NATS in Docker, the API (dev login on,
    private stats URLs allowed), obs-link and the dashboard's Vite server.
-2. Starts a fake OBS (`fake-obs.mjs`) on 4455 with seven scenes, nested sources, audio and preview
+2. Starts a fake OBS (`fake-obs.mjs`) on 4455 with eight scenes, nested sources, audio and preview
    frames drawn by `frames.mjs`, and a stats server for two stream servers with a slowly moving
    bitrate.
 3. Fills it through the API (`seed.mjs`): the workspace "Kiwi IRL" on Pro, the switcher "Main", two
-   stream servers, scenes, triggers, BELABOX, Moblin, two teammates, and in the database a linked
+   stream servers, scenes, a server combination of both servers (so its "IRL two cams" scene is on
+   air), triggers, BELABOX, Moblin, two teammates, and in the database a linked
    Twitch channel, the shared bot and Twitch accounts.
 4. Opens the real browser source in headless Chrome, which connects the fake OBS, and starts the
    fake Moblin phone. Starts BELABOX and Moblin streaming.

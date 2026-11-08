@@ -25,7 +25,7 @@ const DOCS = resolve(HERE, "../..");
 const WORK = join(HERE, ".work");
 const ASSETS = join(DOCS, "src/assets/screenshots");
 
-const PORTS = { pg: 15432, nats: 14222, api: 12100, obsLink: 11100, dashboard: 5190, obs: 4455, stats: 18300, belabox: 18200 };
+const PORTS = { pg: 15432, nats: 14222, api: 12100, obsLink: 11100, dashboard: 5190, obs: Number(process.env.OBS_PORT ?? 4455), stats: 18300, belabox: 18200 };
 const PG = "noalbs-screenshots-pg";
 const NATS = "noalbs-screenshots-nats";
 const DATABASE_URL = `postgres://postgres:postgres@localhost:${PORTS.pg}/shots`;

@@ -17,11 +17,14 @@ export const SCENE_IDS = {
   chatting: uuid(5),
   privacy: uuid(6),
   ending: uuid(7),
+  twoCams: uuid(8),
 };
 
 const SCENES = [
   { name: "Starting soon", uuid: SCENE_IDS.starting, frame: "starting" },
   { name: "IRL", uuid: SCENE_IDS.live, frame: "irl" },
+  // The BELABOX Cloud + Backup SRT combination's LIVE scene (both are live all along).
+  { name: "IRL two cams", uuid: SCENE_IDS.twoCams, frame: "irl" },
   { name: "IRL LOW", uuid: SCENE_IDS.low, frame: "low" },
   { name: "BRB", uuid: SCENE_IDS.offline, frame: "brb" },
   { name: "Just Chatting", uuid: SCENE_IDS.chatting, frame: "chatting" },
@@ -47,6 +50,13 @@ export function startFakeObs({ frames, obsPort = 4455, statsPort = 18300 }) {
   // Scene (or group) name → its items, top first like OBS's Sources dock.
   const items = {
     IRL: [group(1, "Overlay", 1), item(2, "Music", 2, "ffmpeg_source"), item(3, "SRT feed", 3, "ffmpeg_source"), nested(4, "Background", 4)],
+    "IRL two cams": [
+      group(1, "Overlay", 1),
+      item(2, "Music", 2, "ffmpeg_source"),
+      item(3, "Backup cam", 91, "ffmpeg_source"),
+      item(4, "SRT feed", 3, "ffmpeg_source"),
+      nested(5, "Background", 4),
+    ],
     Overlay: [
       item(1, "Chat", 11, "browser_source"),
       item(2, "Alerts", 12, "browser_source"),

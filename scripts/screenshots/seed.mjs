@@ -63,6 +63,11 @@ export async function seed({ base, sql, obsPort, statsPort }) {
     ending: SCENE_IDS.ending,
     refresh: null,
   });
+  // A server combination: while both servers are live (all along here), use a two-camera scene.
+  await api("POST", `${s}/scene-rules`, {
+    server_ids: [belabox.id, backup.id],
+    scenes: { live: SCENE_IDS.twoCams, low: null, offline: null },
+  });
   await api("PUT", `${s}/triggers`, { low: 1000, offline: 300, rtt: 2000, rtt_offline: null });
   await api("PUT", `${s}/behaviour`, {
     bitrate_switcher_enabled: true,
