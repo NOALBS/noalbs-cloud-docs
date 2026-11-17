@@ -88,9 +88,11 @@ Only copies installed from the first public release onwards can update automatic
 
 The Connect app has **Start**, **Stop** and **Restart** controls for each setup. In the dashboard,
 the paired-computer card has **Start OBS**, **Stop OBS** and **Restart OBS**; **Stop OBS** and
-**Restart OBS** ask you to confirm. The Live page also offers **Start OBS** when a paired computer
-reports **OBS not running** or **OBS crashed**. The app's **Stop** and **Restart** controls act
-immediately without a confirmation dialog.
+**Restart OBS** ask you to confirm. On the [Live page](/guides/dashboard/#audio-and-health-panes),
+the **OBS** pane offers these controls too: **Start OBS** when OBS isn't running, or **Stop OBS**
+and **Restart OBS** while it is. With program-control permission, **Programs** also lists the
+programs added through Connect, with **Start** / **Stop** controls. The app's **Stop** and
+**Restart** controls act immediately without a confirmation dialog.
 
 The switcher's **Who can start, stop and restart OBS** permission lets the owner allow only owners,
 owners and admins, or everyone in the workspace (including operators). NOALBS support cannot use
