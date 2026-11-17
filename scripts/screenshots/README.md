@@ -7,6 +7,7 @@ how a page looks.
 node scripts/screenshots/run.mjs                 # all of them, about 4 minutes
 node scripts/screenshots/run.mjs live history    # only these (names from shots.mjs)
 node scripts/screenshots/run.mjs --keep          # leave it running afterwards, to look around
+node scripts/screenshots/run.mjs live live-phone live-operator live-layout obs-stats belabox-card moblin-card
 ```
 
 Run it in the [noalbs-cloud](https://github.com/NOALBS/noalbs-cloud) dev shell, since it builds
@@ -43,6 +44,22 @@ It needs:
    dark mode, writes them as WebP to `src/assets/screenshots/`, and removes everything it started.
 
 Logs and the PNGs are in `scripts/screenshots/.work/` (ignored by git).
+
+The Live recipes use fresh browser storage and the default Streamer layout. `live-operator`
+selects Operator mode and cues Just Chatting without changing Program. `live-layout` opens the
+desktop editor and hides Audio in the draft to show an empty **Add pane** slot; it doesn't save.
+`obs-stats`, `belabox-card` and `moblin-card` capture their whole panes, not popovers or settings.
+These use a narrow single-column viewport so neighboring panes don't stretch them with empty
+space. The `obs-stats` recipe adds OBS to its browser's phone layout before capturing it; that
+pane isn't in the default phone order. The filename is retained for the OBS pane.
+The throwaway switcher allows its owner to see off-air preview pictures, so the cued scene has
+a picture too. The fake OBS supplies Cut and Fade transitions with a 300 ms Fade duration.
+
+If OBS is already using 4455, set `OBS_PORT=4456` and omit `setup`. For example:
+
+```sh
+CHROME=/path/to/chrome OBS_PORT=4456 node scripts/screenshots/run.mjs live live-phone live-operator live-layout obs-stats belabox-card moblin-card
+```
 
 All names, channels and data are made up. Keep it that way: no real stats URLs, keys or accounts.
 

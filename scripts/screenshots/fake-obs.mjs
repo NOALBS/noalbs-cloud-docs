@@ -114,6 +114,16 @@ export function startFakeObs({ frames, obsPort = 4455, statsPort = 18300 }) {
         };
       case "GetCurrentProgramScene":
         return { currentProgramSceneName: state.scene.name, currentProgramSceneUuid: state.scene.uuid };
+      case "GetSceneTransitionList":
+        return {
+          currentSceneTransitionName: "Fade",
+          transitions: [
+            { transitionName: "Cut", transitionKind: "cut_transition", transitionFixed: true },
+            { transitionName: "Fade", transitionKind: "fade_transition", transitionFixed: false },
+          ],
+        };
+      case "GetCurrentSceneTransition":
+        return { transitionName: "Fade", transitionKind: "fade_transition", transitionFixed: false, transitionDuration: 300 };
       case "SetCurrentProgramScene": {
         const next = SCENES.find((s) => s.uuid === data.sceneUuid || s.name === data.sceneName);
         if (!next) return { error: 600 };
