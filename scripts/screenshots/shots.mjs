@@ -11,7 +11,15 @@ const PANE = { width: 390, height: 1100 };
  */
 export const SHOTS = {
   live: { path: "/live", wait: 6000, levels: true },
-  "live-phone": { path: "/live", viewport: PHONE, wait: 5000 },
+  "live-phone": {
+    path: "/live",
+    viewport: PHONE,
+    click: async (page) => {
+      await page.getByRole("switch", { name: "Show the OBS preview", exact: true }).check();
+      await page.getByAltText("What OBS is showing", { exact: true }).waitFor();
+    },
+    wait: 5000,
+  },
   "live-operator": {
     path: "/live",
     viewport: { width: 1920, height: 1080 },
