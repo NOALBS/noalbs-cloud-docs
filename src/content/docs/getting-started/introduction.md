@@ -17,7 +17,7 @@ NOALBS watches the stream server and switches OBS to the right scene for you:
 
 When the feed recovers, it switches back.
 
-![The Live page: the stream is LIVE on BELABOX Cloud, with its bitrate chart, the stream servers, OBS's preview, the scenes and the activity.](../../../assets/screenshots/live.webp)
+![The Live page in Streamer mode, with OBS preview, the current scene, bitrate, Scenes, Audio and stream servers.](../../../assets/screenshots/live.webp)
 
 ## NOALBS and NOALBS Cloud
 

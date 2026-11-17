@@ -5,12 +5,13 @@ description: The Live page, remote control from your phone, and stream history.
 
 import { Image } from "astro:assets";
 import livePhone from "../../../assets/screenshots/live-phone.webp";
+import obsStats from "../../../assets/screenshots/obs-stats.webp";
 
 The dashboard works on a phone as well as a computer, so you or a moderator can keep an eye on
 the stream and fix things from anywhere. On a phone, the tabs at the bottom are **Live**,
 **History** and **Settings**.
 
-<Image src={livePhone} alt="The Live page on a phone: LIVE at 5,348 kbps, with Stop stream, Record, Auto switch, Fix feed and Marker, and the tabs Live, History and Settings." width={300} />
+<Image src={livePhone} alt="The Live page on a phone, with sticky stream status, Preview and Bitrate panes, and the Live, History and Settings tabs." width={300} />
 
 ## Live
 
@@ -39,6 +40,8 @@ With **Studio mode** on:
    immediately. Shift-click a scene to cut straight to it without cueing it first.
 
 With **Studio mode** off, clicking a scene switches directly, as in Streamer mode.
+
+![Operator mode: Just Chatting cued in Preview, IRL two cams in Program, and the Take, Cut and Studio mode controls.](../../../assets/screenshots/live-operator.webp)
 
 **Keyboard shortcuts** opens **Operator shortcuts**. These work on a computer in Operator mode,
 outside text fields, dialogs and **Edit layout**:
@@ -127,6 +130,9 @@ The source row menu offers these actions, depending on your permissions and the 
   first. **In use** marks the server the switcher is using.
 - **OBS**: OBS's own bitrate, dropped frames by cause (network, rendering lag, encoding lag),
   FPS, CPU, memory and free disk. Chat: `!serverinfo`.
+
+  <Image src={obsStats} alt="The OBS pane with stream bitrate, dropped frames, FPS, CPU, memory and free disk." width={360} />
+
 - **Activity**: every switch, start, stop, setting change and command, and who did it.
 - **BELABOX** and **Moblin**, if you [connected](/guides/belabox/) [them](/guides/moblin/): device
   controls and health. **Encoder streaming** and **Moblin streaming** describe those devices,
@@ -169,6 +175,8 @@ separate from the desktop rows.
 8. **Undo** steps back through your draft changes. **Reset to default** replaces the draft with
    the default layout. Select **Save** to keep it, or **Cancel** to discard it; Escape also cancels
    the draft when no menu or dialog is open. Reset isn't saved until you select **Save**.
+
+![Edit layout with drag handles in the pane titles, row and column resize handles, and an empty Add pane slot where Audio was hidden in the draft.](../../../assets/screenshots/live-layout.webp)
 
 There is one saved desktop layout for all window widths. If a row can't fit its panes' minimum
 widths, trailing panes wrap onto continuation rows; widening the window puts them back. In a

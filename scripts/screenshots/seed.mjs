@@ -43,6 +43,7 @@ export async function seed({ base, sql, obsPort, statsPort }) {
   const { switcher, browser_source_url: browserSourceUrl } = await api("POST", `${w}/switchers`, { name: "Main" });
   const s = `${w}/switchers/${switcher.id}`;
   await api("PUT", `${s}/obs`, { port: obsPort, password: null, clear_password: false });
+  await api("PUT", `${s}/preview`, { off_air: "owners" });
   const belabox = await api("POST", `${s}/stream-servers`, {
     name: "BELABOX Cloud",
     kind: "belabox",
@@ -74,6 +75,7 @@ export async function seed({ base, sql, obsPort, statsPort }) {
     only_switch_when_streaming: true,
     instantly_switch_on_recover: true,
     auto_switch_notification: true,
+    dashboard_switch_notification: true,
     retry_attempts: 5,
     auto_stop_on_raid: true,
     announce_raid: true,
